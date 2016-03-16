@@ -1,17 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-var entries = [
+var til = [
   {slug:"how to pass class", body: "come to class. do your homework", created_at: "some date"},
   {slug:"how to fail class", body: "play video games all day", created_at: "some date"}
 ];
 
 /* READ all: GET entries listing. */
 router.get('/', function(req, res, next) {
-  res.render('til/index', { title: 'Blog', entries: entries });
+  res.render('til/index', { title: 'Blog', til: entries });
 });
 
-/* CREATE entry form: GET /entries/new */
+/* CREATE entry form: GET /til/new */
 router.get('/new', function(req, res, next) {
   res.render('til/new', {title: "Create new entry"});
 });
@@ -19,7 +19,7 @@ router.get('/new', function(req, res, next) {
 /*CREATE entry: POST /til/ */
 router.post('/', function(req, res, next) {
   entries.push(req.body);
-  res.render('til/index', { title: 'Blog', entries: entries });
+  res.render('til/index', { title: 'Blog', til: entries });
 });
 
 /* UPDATE entry form: GET /til/1/edit */
@@ -44,9 +44,9 @@ router.post('/:id', function(req, res, next) {
 
 /* DELETE entry: GET /til/1/delete  */
 router.get('/:id/delete', function(req, res, next) {
-  var id = req.params.id
+  var id = parseInt(req.params.id);
   entries = entries.slice(0,id).concat(entries.slice(id+1, entries.length));
-  res.render('til/index', { title: 'Blog', entries: entries });
+  res.render('til/index', { title: 'Today I Learned', entries: entries });
 });
 
 /* THIS NEEDS TO BE LAST or /new goes here rather than where it should */
