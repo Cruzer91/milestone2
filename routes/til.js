@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var entries = [
-  {slug:"how to pass class", body: "come to class. do your homework", created_at: "some date"},
-  {slug:"how to fail class", body: "play video games all day", created_at: "some date"}
+  {slug:"Entry One", body: "I learned that mips is a terrible language to program in.", created_at: "some date"},
+  {slug:"Entry Two", body: "I learned that astronaut Scott Kelly grew 2 inches while he was in space for a year.", created_at: "some date"}
 ];
 
 /* READ all: GET entries listing. */
