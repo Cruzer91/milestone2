@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var til = require('./routes/til');
+var entries = require('./routes/til');
 
 
 var app = express();
@@ -23,8 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// -------------- Database stuff -----------------
 var orm = require('orm');
-var dbstring = "postgress://racruz_91:Amethyst2365@localhost/CruzDB";
+var dbstring = "postgres://racruz_91:Amethyst2365@localhost/CruzDB";
 var string = process.env.DATABASE_URL || dbstring;
 app.use(orm.express(string, {
     define: function (db, models, next) {
@@ -33,7 +34,7 @@ app.use(orm.express(string, {
 }));
 
 app.use('/', routes);
-app.use('/til', til);
+app.use('/til', entries);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

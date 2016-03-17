@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
      if(err){
        console.log(err);
      }
-     res.render('entries/index', { title: 'Today I Learned', entries: data });
+     res.render('til/index', { title: 'Today I Learned', entries: data });
    });
 });
 
@@ -117,7 +117,7 @@ router.get('/:id/delete', function(req, res, next) {
      if(err){
        console.log(err);
      }
-     res.render('entries/index', { title: 'Today I Learned', entries: data });
+     res.render('til/index', { title: 'Today I Learned', entries: data });
    });
 });
 
@@ -131,7 +131,7 @@ router.get('/:id', function(req, res, next) {
      {
        console.log(err);
      }
-     res.render('entries/entry', {title: "a entry", entry: data[0]});
+     res.render('til/entry', {title: "a entry", entry: data[0]});
    });
 });
 //
