@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var til = require('./routes/til');
 
+
 var app = express();
 
 // view engine setup
@@ -22,12 +23,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// var db-connection-string = "";
-// app.use(orm.express(string, {
-//     define: function (db, models, next) {
-//         next();
-//     }
-// }));
+var orm = require('orm');
+var dbstring = "postgress://racruz_91:Amethyst2365@localhost/CruzDB";
+var string = process.env.DATABASE_URL || dbstring;
+app.use(orm.express(string, {
+    define: function (db, models, next) {
+        next();
+    }
+}));
 
 app.use('/', routes);
 app.use('/til', til);
