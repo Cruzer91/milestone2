@@ -15,10 +15,8 @@ var entries = [];
 
 /* READ all: GET entries listing. */
 router.get('/', function(req, res, next) {
-  var q = req.param.q
  req.db.driver.execQuery(
-   "SELECT * FROM entries WHERE like ? ; ",
-   [q],
+   "SELECT * FROM entries ; ",
    function(err, data){
      if(err){
        console.log(err);
@@ -37,7 +35,7 @@ router.get('/new', function(req, res, next) {
 /*CREATE entry: POST /entries/ */
 router.post('/', function(req, res, next) {
  req.db.driver.execQuery(
-   "INSERT INTO entries (slug,body) VALUES ('?' , '?');",
+   "INSERT INTO entries (slug,body) VALUES (? , ?);",
    [req.body.slug, req.body.body],
    function(err, data){
      if(err)
