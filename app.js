@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // -------------- Database stuff -----------------
 var orm = require('orm');
-var dbstring = "postgres://racruz_91:themer178ZurC@localhost/milestone2DB";
+var dbstring = "postgres://racruz_91:cruzpassword@localhost/racruz_91";
 var string = process.env.DATABASE_URL || dbstring;
 app.use(orm.express(string, {
     define: function (db, models, next) {
