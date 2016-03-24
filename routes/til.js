@@ -135,46 +135,6 @@ router.get('/:id', function(req, res, next) {
      res.render('til/entry', {title: "a entry", entry: data[0]});
    });
 });
-//
-// /*CREATE entry: POST /til/ */
-// router.post('/', function(req, res, next) {
-//   entries.push(req.body);
-//   res.render('til/index', { title: 'Today I Learned', entries: entries });
-// });
-//
-//
-//
-// /* UPDATE entry form: GET /til/1/edit */
-// router.get('/:id/edit', function(req, res, next) {
-//   res.render('til/update',
-//   {
-//     title: 'Update an entry',
-//     id: req.params.id,
-//     entry: entries[req.params.id]
-//   });
-// });
-//
-// /* UPDATE entry: POST /til/1 */
-// router.post('/:id', function(req, res, next) {
-//   entries[req.params.id] = req.body;
-//   res.render('til/index',
-//   {
-//     title: 'Update an entry',
-//     entries: entries
-//   });
-// });
-//
-// /* DELETE entry: GET /til/1/delete  */
-// router.get('/:id/delete', function(req, res, next) {
-//   var id = parseInt(req.params.id);
-//   entries = entries.slice(0,id).concat(entries.slice(id+1, entries.length));
-//   res.render('til/index', { title: 'Today I Learned', entries: entries });
-// });
-//
-// /* THIS NEEDS TO BE LAST or /new goes here rather than where it should */
-// /* READ one entry: GET /entries/0 */
-// router.get('/:id', function(req, res, next) {
-//   res.render('til/entry', {title: "a entry", id: req.params.id, entry: entries[req.params.id]});
-// });
+
 
 module.exports = router;

@@ -1,14 +1,14 @@
 body {
   padding: 0;
-  background-color: lightgreen;
+  background-image: url(../images/picture_of_people_learning.jpg);
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center top;
 }
 
-p {
-  background-color: lightgreen;
-}
-
-h1 {
+h1.tilMessage {
   text-align: center;
+  color:grey;
 }
 
 ul {
@@ -32,7 +32,14 @@ li a:hover {
     color: white;
 }
 
-
 nav a {
   text-decoration: none;
-}*/
+}
+p.footTitle{
+  color: grey;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+
+}
