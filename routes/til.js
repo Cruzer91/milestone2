@@ -1,17 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// var entries = [
-//   {slug:"Entry One", body: "I learned that mips is a terrible language to program in.", created_at: "some date"},
-//   {slug:"Entry Two", body: "I learned that astronaut Scott Kelly grew 2 inches while he was in space for a year.", created_at: "some date"}
-// ];
+
 
 var entries = [];
-
-// /* READ all: GET entries listing. */
-// router.get('/', function(req, res, next) {
-//   res.render('til/index', { title: 'Today I Learned', entries: entries });
-// });
 
 /* READ all: GET entries listing. */
 router.get('/', function(req, res, next) {
